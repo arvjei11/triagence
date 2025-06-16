@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    volumes: ["./app:/code/app"]
+    ports:
+      - "8000:8000"       # <-- add this
+    depends_on: [redis]
+
+  worker:
+    build: .
+    command: python app/worker.py
+    env_file: .env
+    volumes: ["./app:/code/app"]
+    depends_on: [redis]
+
+  redis:
+    image: redis:7-alpine
