@@ -1,0 +1,7 @@
+{
+  "repository": { "full_name": "triagence/demo" },
+  "workflow":   { "name": "CI" },
+  "conclusion_step": "npm install",
+  "error": "npm ERR! network timeout at https://registry.npmjs.org/",
+  "status": "failure"
+}

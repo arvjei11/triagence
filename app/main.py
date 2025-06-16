@@ -25,5 +25,5 @@ async def github_webhook(request: Request):
         raise HTTPException(status_code=401, detail="Invalid signature")
 
     payload = json.loads(raw.decode())
-    q.enqueue("app.worker.log_event", payload)   # Stage-1: just log
+    q.enqueue("app.worker.process_event", payload)
     return {"status": "queued"}
