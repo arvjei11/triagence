@@ -4,3 +4,4 @@ python-dotenv
 redis
 rq==1.15.1
 openai>=1.16.0
+requests
